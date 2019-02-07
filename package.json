@@ -63,8 +63,8 @@
   },
   "homepage": "https://github.com/chiguireitor/dockly-ssh#readme",
   "dependencies": {
-    "chiguireitor/neo-blessed": "0.2.0",
-    "neo-blessed-contrib": "4.8.10",
+    "neo-blessed": "github:chiguireitor/neo-blessed",
+    "neo-blessed-contrib": "4.8.7",
     "chalk": "2.4.2",
     "command-line-args": "^5.0.2",
     "command-line-usage": "^5.0.5",
