@@ -1,7 +1,7 @@
 {
-  "name": "dockly",
-  "version": "0.0.0-development",
-  "description": "Immersive terminal interface for managing docker containers and services",
+  "name": "dockly-ssh",
+  "version": "0.0.1",
+  "description": "Immersive terminal interface for managing docker containers and services, designed to be used as an SSH shell",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lirantal/dockly.git"
+    "url": "git+https://github.com/chiguireitor/dockly-ssh.git"
   },
   "keywords": [
     "docker",
@@ -50,15 +50,21 @@
       "name": "Israel Roldan",
       "url": "https://github.com/israelroldan",
       "email": "oss@isro.me"
+    },
+    {
+      "name": "John 'chiguireitor' Villar",
+      "url": "https://github.com/chiguireitor",
+      "email": "contact@chiguireitor.rocks"
     }
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lirantal/dockly/issues"
+    "url": "https://github.com/chiguireitor/dockly-ssh/issues"
   },
-  "homepage": "https://github.com/lirantal/dockly#readme",
+  "homepage": "https://github.com/chiguireitor/dockly-ssh#readme",
   "dependencies": {
-    "blessed-contrib": "4.8.10",
+    "chiguireitor/neo-blessed": "0.2.0",
+    "neo-blessed-contrib": "4.8.10",
     "chalk": "2.4.2",
     "command-line-args": "^5.0.2",
     "command-line-usage": "^5.0.5",

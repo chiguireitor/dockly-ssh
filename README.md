@@ -2,7 +2,7 @@
 	<br>
   <img width="200" src="https://user-images.githubusercontent.com/316371/28937414-67ee5ffa-7893-11e7-95f9-5059cacf9170.png">
 	<br>
- Immersive terminal interface for managing docker containers and services
+ Immersive terminal interface for managing docker containers and services, specially suited to be used as a SSH shell (forked from lyrantaly/dockly)
 </p>
 
 
@@ -18,9 +18,9 @@
 
 
 🌟 Featured on [![Awesome Docker](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/veggiemonk/awesome-docker) [![DevOps Weekly](https://img.shields.io/badge/DevOpsWeekly-%F0%9F%95%B6-yellow.svg
-)](http://devopsweekly.com) 
+)](http://devopsweekly.com)
 [![terminals are sexy](https://img.shields.io/badge/TerminalsAreSexy-%F0%9F%92%BB-green.svg
-)](https://github.com/k4m4/terminals-are-sexy) 
+)](https://github.com/k4m4/terminals-are-sexy)
 
 
 
