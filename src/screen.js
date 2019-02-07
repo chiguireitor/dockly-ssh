@@ -2,7 +2,7 @@
 
 const path = require('path')
 const blessed = require('neo-blessed')
-const contrib = require('blessed-contrib')
+const contrib = require('neo-blessed-contrib')
 const assetsLoader = require(path.join(__dirname, '/assetsLoader'))
 
 const tty = require('tty')
