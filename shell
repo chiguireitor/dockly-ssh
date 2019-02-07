@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /home/john/proyectos/dockly
+node index.js

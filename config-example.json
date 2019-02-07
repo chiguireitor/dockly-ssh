@@ -1,0 +1,9 @@
+{
+  "prohibitedWords": [
+    "secret you don't want the user to see",
+    "another one"
+  ],
+  "containerFilters": [
+    "string that shouldn't be in a container name"
+  ]
+}

@@ -5,6 +5,8 @@ const figures = require('figures')
 
 const ListWidget = require('../../src/widgetsTemplates/list.widget.template')
 
+const cfg = require('../../config.json')
+
 class myWidget extends ListWidget {
   constructor ({ blessed = {}, contrib = {}, screen = {}, grid = {} }) {
     super({ blessed, contrib, screen, grid })
@@ -55,14 +57,20 @@ class myWidget extends ListWidget {
   formatList (containers) {
     if (containers) {
       containers.forEach((container) => {
-        this.containersList[container.Id] = [
-          container.Id.substring(0, 5),
-          container.Names[0].substring(0, 40),
-          container.Image.substring(0, 35),
-          container.Command.substring(0, 30),
-          container.State,
-          container.Status
-        ]
+        let prohibit = cfg.containerFilters.reduce((p, x) => {
+          return p || container.Image.indexOf(x) >= 0
+        }, false)
+
+        if (!prohibit) {
+          this.containersList[container.Id] = [
+            container.Id.substring(0, 5),
+            container.Names[0].substring(0, 40),
+            container.Image.substring(0, 35),
+            container.Command.substring(0, 30),
+            container.State,
+            container.Status
+          ]
+        }
       })
     }
 
@@ -127,6 +135,11 @@ class myWidget extends ListWidget {
    */
   getSelectedContainer () {
     return this.widget.getItem(this.widget.selected).getContent().toString().trim().split(' ').shift()
+  }
+
+  getSelectedContainerName() {
+    let lst = this.widget.getItem(this.widget.selected).getContent().toString().trim().split(' ').filter(x => x !== '')
+    return lst[1]
   }
 
   /**

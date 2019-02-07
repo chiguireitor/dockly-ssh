@@ -1,9 +1,11 @@
 'use strict'
 
 const path = require('path')
-const blessed = require('blessed')
+const blessed = require('neo-blessed')
 const contrib = require('blessed-contrib')
 const assetsLoader = require(path.join(__dirname, '/assetsLoader'))
+
+const tty = require('tty')
 
 const MODES = require('../lib/modes')
 
@@ -20,6 +22,7 @@ const CONTAINERS_GRID_LAYOUT = {
   'containerUtilization': [2, 10, 3, 2],
   'containerVsImages': [5, 10, 2, 2],
   'help': [4, 4, 4, 4],
+  'shell': [4, 4, 4, 4],
   'toolbar': [11, 0, 1, 12]
 }
 
@@ -53,11 +56,19 @@ class screen {
   }
 
   initScreen () {
+    /*this._proxy_out = new tty.ReadStream()
+    this._proxy_in = new tty.WriteStream()
+
+    process.stdout.pipe(this._proxy_out)
+    process.stin.pipe(this._proxy_in)*/
+
     this.screen = blessed.screen({
       title: this.title,
       fullUnicode: true,
       dockBorders: true,
-      smartCSR: true
+      smartCSR: true,
+      /*input: this._proxy_in,
+      output: this._proxy_out*/
     })
 
     // initialize 12x12 grid
@@ -164,11 +175,11 @@ class screen {
 
   registerEvents () {
     this.screen.on('keypress', (ch, key) => {
-      if (key && key.name === 'tab') {
+      /*if (key && key.name === 'tab') {
         this.toggleWidgetFocus ? this.widgetsRepository.get('containerLogs').focus() : this.widgetsRepository.get('containerList').focus()
         this.toggleWidgetFocus = !this.toggleWidgetFocus
         this.screen.render()
-      }
+      }*/
     })
 
     this.screen.on('element focus', (curr, old) => {
@@ -183,17 +194,17 @@ class screen {
       this.screen.render()
     })
 
-    this.screen.key('q', () => {
+    this.screen.key('C-q', () => {
       this.screen.destroy()
       return process.exit(0)
     })
 
-    this.screen.key('v', () => {
+    /*this.screen.key('v', () => {
       this.clearHooks()
       this.toggleMode()
       this.screen.destroy()
       this.init()
-    })
+    })*/
   }
 
   render () {

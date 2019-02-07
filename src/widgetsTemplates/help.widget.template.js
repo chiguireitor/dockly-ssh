@@ -95,15 +95,15 @@ class myWidget extends baseWidget() {
 
   getWidgetContents () {
     return `
-    __        _            _    _               
-    \\ \\    __| | ___   ___| | _| |_   _         
-     \\ \\  / _\` |/ _ \\ / __| |/ / | | | |        
-     / / | (_| | (_) | (__|   <| | |_| |        
-    /_/   \\__,_|\\___/ \\___|_|\\_\\_|\\__, |  _____ 
+    __        _            _    _
+    \\ \\    __| | ___   ___| | _| |_   _
+     \\ \\  / _\` |/ _ \\ / __| |/ / | | | |
+     / / | (_| | (_) | (__|   <| | |_| |
+    /_/   \\__,_|\\___/ \\___|_|\\_\\_|\\__, |  _____
                                   |___/  |_____|
-    
+
     Docker console UI and Dashboard for quick managing and inspecting of Containers and Images
-    
+
     Available key commands:
 
     ▸ h: Show/hide this window
@@ -113,7 +113,7 @@ class myWidget extends baseWidget() {
     ▸ ⏎: Show the logs of the current container or service
     ▸ v: Toggle between Containers and Services view
     ▸ q: Quit dockly
-    
+
     The following commands are only available in Container view:
     ▸ l: Launch a /bin/bash session on the selected container
     ▸ r: Restart the selected container

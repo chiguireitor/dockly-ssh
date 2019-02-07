@@ -26,42 +26,47 @@ class myWidget extends baseWidget(EventEmitter) {
     return this.widget
   }
 
+  onShell() {
+    const sh = this.widgetsRepo.get('shell')
+    return sh.shellOpen
+  }
+
   createWidget () {
     const baseCommands = {
       'refresh': {
         keys: ['='],
-        callback: () => { this.emit('key', '=') }
+        callback: () => { if (!this.onShell()) { this.emit('key', '=') } }
       },
       'info': {
         keys: ['i'],
-        callback: () => { this.emit('key', 'i') }
+        callback: () => { if (!this.onShell()) { this.emit('key', 'i') } }
       },
       'logs': {
         keys: ['[RETURN]'],
-        callback: () => { this.emit('key', '[RETURN]') }
+        callback: () => { if (!this.onShell()) { this.emit('key', '[RETURN]') } }
       }
     }
 
     const containerCommands = {
       'shell': {
         keys: ['l'],
-        callback: () => { this.emit('key', 'l') }
+        callback: () => { if (!this.onShell()) { this.emit('key', 'l') } }
       },
       'restart': {
         keys: ['r'],
-        callback: () => { this.emit('key', 'r') }
+        callback: () => { if (!this.onShell()) { this.emit('key', 'r') } }
       },
       'stop': {
         keys: ['s'],
-        callback: () => { this.emit('key', 's') }
+        callback: () => { if (!this.onShell()) { this.emit('key', 's') } }
       },
       'menu': {
         keys: ['m'],
-        callback: () => { this.emit('key', 'm') }
+        callback: () => { if (!this.onShell()) { this.emit('key', 'm') } }
       },
       'search': {
         keys: ['/'],
-        callback: () => { this.emit('key', '/') }
+        callback: () => { if (!this.onShell()) { this.emit('key', '/') } }
       }
     }
 
@@ -96,15 +101,15 @@ class myWidget extends baseWidget(EventEmitter) {
           {
             'help': {
               keys: ['h'],
-              callback: () => { this.emit('key', 'h') }
+              callback: () => { if (!this.onShell()) { this.emit('key', 'h') } }
             },
             'view mode': {
               keys: ['v'],
-              callback: () => { this.emit('key', 't') }
+              callback: () => { if (!this.onShell()) { this.emit('key', 't') } }
             },
-            'quit': {
-              keys: ['q'],
-              callback: () => { this.emit('key', 'q') }
+            'disconnect': {
+              keys: ['C-q'],
+              callback: () => { if (!this.onShell()) { this.emit('key', 'q') } }
             }
           })
     })

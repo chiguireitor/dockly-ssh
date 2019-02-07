@@ -4,6 +4,7 @@
   "description": "Immersive terminal interface for managing docker containers and services",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon index.js",
     "test": "yarn run lint",
     "lint": "standard",
     "lint:fix": "standard --fix",
@@ -57,7 +58,6 @@
   },
   "homepage": "https://github.com/lirantal/dockly#readme",
   "dependencies": {
-    "blessed": "^0.1.81",
     "blessed-contrib": "4.8.10",
     "chalk": "2.4.2",
     "command-line-args": "^5.0.2",
@@ -65,8 +65,12 @@
     "dockerode": "2.5.8",
     "figures": "^2.0.0",
     "glob": "^7.1.2",
+    "node-pty": "^0.8.1",
     "opn-shell": "^1.0.1",
-    "semver": "5.6.0"
+    "pty": "0.0.0",
+    "pty.js": "^0.3.1",
+    "semver": "5.6.0",
+    "term.js": "0.0.7"
   },
   "devDependencies": {
     "semantic-release": "15.13.3",
